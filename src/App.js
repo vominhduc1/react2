@@ -1,23 +1,55 @@
 import logo from './logo.svg';
 import './App.css';
 
+
+function ContentCard(prop){
+   return(
+    <div className="content-card">
+      <h2>{prop.title || "Title of content of card"}</h2>
+      <p>{prop.detail ||"This is the content of the card "}</p>
+    </div>
+   );
+
+
+  }
+//Header
+function Header(prop){
+  return(
+    <header className="header">
+       <div className="logo">Your logo</div>
+       <nav className="nav">
+         <ul>
+           <li><a href="#">Home</a></li>
+           <li><a href="#">About</a></li>
+           <li><a href="#">Service</a></li>
+           <li><a href="#">Contact</a></li>
+         </ul>
+       </nav>
+    </header>
+  );
+
+}
+
+function Footer(prop){
+    return(
+     <footer className="footer">
+       <p>&copy; {new Date().getFullYear()}Your company name</p>
+     </footer>   
+
+    );
+    
+    
+}
+
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Header></Header>
+     <ContentCard></ContentCard>
+     <ContentCard></ContentCard>
+     <ContentCard></ContentCard>
+     <Footer></Footer>
     </div>
   );
 }
